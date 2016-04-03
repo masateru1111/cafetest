@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+.contact {
+	width: 500px;
+	margin: 0 auto
+}
+
+.contact td {
+	border: none;
+	float: left;
+	padding : 10px;
+	color: #800000
+}
+
+.textarea1 {
+	width: 210px;
+}
+
+.textarea3 {
+	valign: top;
+	width: 500px;
+	height: 300px;
+	word-wrap: break-word;
+}
+
+.textarea2 {
+	width: 300px;
+}

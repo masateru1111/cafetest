@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+#cart_content {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.cart_button {
+	width: 450px;
+	margin: 0 auto;
+	padding: 10px;
+	height: 20px;
+}
+
+table {
+	border: none;
+	margin-top: 20px;
+	width: 100%;
+}
+
+td {
+	white-space: nowrap;
+	padding: 0.5em;
+}

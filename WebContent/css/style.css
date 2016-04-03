@@ -1,0 +1,262 @@
+@CHARSET "UTF-8";
+
+/*＜cssのリセット＞*/
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 3.0.0
+build: 1549
+*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
+	form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset, img {
+	border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+li {
+	list-style: none;
+}
+
+caption, th {
+	text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before, q:after {
+	content: '';
+}
+
+abbr, acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+input, textarea, select {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+input, textarea, select {
+	*font-size: 100%;
+}
+
+legend {
+	color: #000;
+}
+
+/*-----------------cssのリセットここまで----------------*/
+
+/**
+-----------------全体共有cssここから----------------
+**/
+body {
+	padding: 0;
+	margin: 0;
+	background-image: url("../img/background.jpg");
+	background-size: contain;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.9;
+	opacity: 0.9;
+	font-family: arial, sans-serif;
+}
+#footer p {
+	font-size: small;
+	padding-top: 40px
+}
+
+#footer {
+	clear: left;
+	margin-top: 20px;
+	background-image: url(../img/cafe_mark.png);
+	background-size: 20px 20px;
+	background-repeat: repeat-x;
+}
+
+.top {
+	text-align: center;
+	position: relative;
+	top: 220px;
+	color: black;
+	font-size: 100px;
+	text-shadow: 2px 3px 3px white;
+	font-family: Sevillana, cursive;
+	opacity: 0.6
+}
+
+#logo {
+	margin-bottom: 20px;
+	margin-top: -230px
+}
+
+img {
+	border-style: none;
+}
+
+#nav li {
+	float: left;
+	padding-right: 30px;
+	list-style-type: none;
+	display: inline
+}
+
+#cart_img {
+	display: inline;
+	margin-left: 5px;
+}
+
+#nav {
+	padding: 15px 30px 30px;
+	background-image: url(../img/menu-bg.png);
+	line-height: 100%;
+	margin-top: 10px;
+	margin-bottom: 30px
+}
+
+#nav li a:link {
+	color: #f5f3eb;
+	text-decoration: none
+}
+
+#nav li a:visited {
+	color: #f5f3eb;
+	text-decoration: none
+}
+
+#nav li a:hover {
+	color: #e4dbb9;
+	text-decoration: none
+}
+
+#nav li a:active {
+	color: #ffffff;
+	text-decoration: none
+}
+
+#backimg {
+	width: 900px;
+	margin: 0 auto;
+	background-color: #d2b48c;
+	text-align: center;
+	padding-bottom: 20px;
+	filter: alpha(opacity = 50);
+	overflow : hidden
+}
+
+.button {
+	font-size: 15px;
+	font-weight: bold;
+	padding: 8px 30px;
+	background-color: #a0522d;
+	border-radius: 4px;
+	color: papayawhip;
+	box-shadow: 0 3px 0 black;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	border-style: none;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-bottom: 10px
+}
+
+.button:hover {
+	background-color: #cd853f;
+	box-shadow: 0 3px 0 maroon;
+}
+
+.form table td {
+	float: lect
+}
+
+h2 {
+	margin-top: 30px;
+	padding: 5px;
+	color: #800000;
+	font-size: 24px;
+	border-bottom: 2px dotted #800000;
+	font-family: 'Arial', 'Tahoma', sans-serif;
+	width: 500px;
+	margin: 40px auto;
+}
+
+p {
+	font-family: 'Arial', 'Tahoma', sans-serif;
+	font-size: 16px
+}
+
+h1 {
+	font-size: 30px;
+	margin: 50px 0px
+}
+
+
+/*------------ ログイン時のモーダル--------------- */
+
+.login-modal-wrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 500px;
+  height: auto;
+  text-align: center;
+}
+.login-modal-wrapper{
+	display : none
+}
+#login-show{
+	color: white;
+	cursor : pointer;
+}
+#login-show:hover {
+	color: #e4dbb9;
+	text-decoration: none
+}
+#close{
+	position:absolute;
+	top :10px;
+	right:10px;
+	z-index : 1;
+	cursor:pointer;
+}
+.image{
+	display : none
+}

@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.create{
+	width : 400px;
+	margin : auto ;
+	
+}
+
+.create td{
+	padding : 10px 5px;
+	color:#800000;
+}
+.create th{
+	text-align : center;
+}
+
+h3{
+	color:#800000
+}

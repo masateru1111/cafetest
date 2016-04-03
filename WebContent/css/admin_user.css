@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+body{
+	background-color : lemonchiffon;
+}
+
+
+.user_list{
+	border-collapse : collapse;
+	width : auto;
+	font-size:12px;
+	
+	
+}
+.user_list th{
+	background-color : burlywood;
+	padding:5px 10px;
+	border : 1px solid black;
+	
+}
+.user_list td{
+	border : none;
+	padding:5px 10px;
+	border : 1px solid black;
+	
+}
+.List{
+	font-size : 12px;
+	margin-bottom : 20px;
+	text-align :center;
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- loginTest -->
+<!DOCTYPE struts PUBLIC
+	 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	 "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	 <package name="loginTest" namespace="/" extends="struts-default">
+
+	<!-- ログイン確認画面へ遷移 -->
+	<action name="LoginTestAction" class="com.internousdevwork.loginTest.action.LoginTestAction" method="execute">
+			<result name="success" type ="chain">PurchaseAction</result>
+			<result name="error" type ="chain">PurchaseAction</result>
+	</action>
+	
+	<!-- メイン画面に遷移 -->
+	<action name="PurchaseAction" class="com.internousdevwork.loginTest.action.PurchaseAction" method="execute">
+			<result name="success" >/purchase.jsp</result>
+	</action>
+	
+	<!-- カート内に商品を格納するアクション -->
+	<action name="CartAddItemAction" class="com.internousdevwork.loginTest.action.CartAddItemAction" method="execute">
+			<result name="success" type ="chain">PurchaseAction</result>
+			<result name="error" type="chain">PurchaseAction</result>
+	</action>
+	
+	<!-- カート内を更新するアクション -->
+	<action name="CartUpdateAction" class="com.internousdevwork.loginTest.action.CartUpdateAction" method="execute">
+			<result name="success" type ="chain">GoCartAction</result>
+			<result name="error" type ="chain">GoCartAction</result>
+	</action>
+	
+	<!-- カート情報を取得するアクション -->
+	<action name="GoCartAction" class="com.internousdevwork.loginTest.action.GoCartAction" method="execute">
+			<result name="success">purchase_update.jsp</result>
+			<result name="error" type="chain">PurchaseAction</result>	
+	</action>
+	
+	<!-- 購入確認画面へ遷移 -->
+	<action name="GoPurchaseCheckAction" class="com.internousdevwork.loginTest.action.GoPurchaseCheckAction" method="execute">
+			<result name="success">purchase_check.jsp</result>
+			<result name="error" type="chain">PurchaseAction</result>	
+	</action>
+	
+	<!-- 購入完了画面へ遷移 -->
+	<action name="GoPurchaseCompletionAction" class="com.internousdevwork.loginTest.action.GoPurchaseCompletionAction" method="execute">
+			<result name="success">purchase_completion.jsp</result>
+			<result name="error" type="chain">PurchaseAction</result>	
+	</action>
+
+	<!-- 新規登録確認画へ遷移 -->
+	<action name="CreateUserAction" class="com.internousdevwork.loginTest.action.CreateUserAction" method="execute">
+			<result name="success">create_user_check.jsp</result>
+			<result name="error">/create_user.jsp</result>	
+			<result name="input" >create_user.jsp</result>
+	</action>
+	
+	<!-- 新規登録完了画面へ遷移  -->
+	<action name="CreateUserCompletionAction" class="com.internousdevwork.loginTest.action.CreateUserCompletionAction" method="execute">
+			<result name="success" type ="chain">PurchaseAction</result>
+			<result name="error">/create_user.jsp</result>	
+	</action>
+	
+	<!-- 退会処理するアクション -->
+	<action name="WithdrawalAction" class="com.internousdevwork.loginTest.action.WithdrawalAction" method="execute">
+			<result name="success" type="chain">PurchaseAction</result>
+	</action>
+	
+	<!-- ログアウト処理するアクション -->
+	<action name="LogoutAction" class="com.internousdevwork.loginTest.action.LogoutAction" method="execute">
+			<result name="success" type="chain">PurchaseAction</result>
+	</action>
+	
+	<!-- 情報変更確認へ遷移 -->
+	<action name="EditUserAction" class="com.internousdevwork.loginTest.action.EditUserAction" method="execute">
+			<result name="success">edit_payment_check.jsp</result>
+			<result name="error">edit_payment.jsp</result>
+			<result name="input" >edit_payment.jsp</result>
+	</action>
+	
+	<!-- 情報変更完了するアクション -->
+	<action name="EditUserCompletionAction" class="com.internousdevwork.loginTest.action.EditUserCompletionAction" method="execute">
+			<result name="success">edit_user_completion.jsp</result>
+			<result name="error">edit_payment.jsp</result>
+	</action>
+	<action name="GoMypageAction" class="com.internousdevwork.loginTest.action.GoMypageAction" method="execute">
+			<result name="success">mypage.jsp</result>
+			<result name="error">mypage.jsp</result>
+	</action>
+	
+	<!-- お問い合わせ処理するアクション -->
+	<action name="ContactAction" class="com.internousdevwork.loginTest.action.ContactAction" method="execute">
+			<result name="success" type="chain">PurchaseAction</result>
+			<result name="error">contact.jsp</result>
+	</action>
+	
+	<!-- 管理者ログイン処理するアクション -->
+	<action name="AdminLoginAction" class="com.internousdevwork.loginTest.action.AdminLoginAction" method="execute">
+			<result name="success" type="chain">AdminItemsAction</result>
+			<result name="error">admin_login.jsp</result>
+	</action>
+	
+	<!-- 管理者商品リストを表示させるアクション -->
+	<action name="AdminItemsAction" class="com.internousdevwork.loginTest.action.AdminItemsAction" method="execute">
+			<result name="success">admin_main.jsp</result>
+			<result name="error">admin_main.jsp</result>
+	</action>
+	
+	<!-- 管理者画面から商品を追加するアクション -->
+	<action name="AdminAddItemsAction" class="com.internousdevwork.loginTest.action.AdminAddItemsAction" method="execute">
+			<result name="success" type="chain">AdminItemsAction</result>
+			<result name="error">admin_add.jsp</result>
+	</action>
+	
+	<!-- 管理者画面から商品を削除するアクション -->
+	<action name="AdminDeleteItemAction" class="com.internousdevwork.loginTest.action.AdminDeleteItemAction" method="execute">
+			<result name="success" type="chain">AdminItemsAction</result>
+			<result name="error" type="chain">AdminItemsAction</result>
+	</action>
+	
+	<!-- 管理者画面にユーザー一覧表示させるアクション -->
+	<action name="AdminUserAction" class="com.internousdevwork.loginTest.action.AdminUserAction" method="execute">
+			<result name="success">admin_user_list.jsp</result>
+			<result name="error">admin_main.jsp</result>
+	</action>
+	
+	<!--管理者ログアウト処理するアクション -->
+	<action name="AdminLogoutAction" class="com.internousdevwork.loginTest.action.AdminLogoutAction" method="execute">
+			<result name="success">admin_login.jsp</result>
+	</action>
+	
+	<!-- 管理者画面からユーザー情報を削除するアクション -->
+	<action name="AdminDeleteUserAction" class="com.internousdevwork.loginTest.action.AdminDeleteUserAction" method="execute">
+			<result name="success" type="chain">AdminUserAction</result>
+			<result name="error" type="chain">AdminUserAction</result>
+	</action>
+		
+	</package>
+</struts>

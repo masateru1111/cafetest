@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.withdrawal{
+	margin-top : 30px;
+}
+
+.withdrawal li{
+	display : inline;
+	margin-right :20px;
+}

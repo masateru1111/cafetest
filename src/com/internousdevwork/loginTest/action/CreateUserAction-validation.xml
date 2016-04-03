@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+      <!-- バリデーションテスト -->
+<!-- 
+jsp側につける内容
+<td><s:fielderror><s:param value="%{'confirmPass'}" /></s:fielderror></td>
+ -->
+ 
+<!--  
+struts.xmlへ追記する内容
+<result name="input" >payment_information_edit.jsp</result> -->
+
+      <validators>
+    	<!-- お名前 -->
+    	<field name="userName">
+    		<field-validator type="regex">
+    			<param name="regex">^[ぁ-んァ-ヶ一-龠一-十]+$</param>
+    			<message key="アルファベットと記号以外を入力してください"/>
+    		</field-validator>
+    		<field-validator type="stringlength">
+                	<param name="minLength">1</param>
+                	<param name="maxLength">50</param>
+                <message key="入力必須です"/>
+    		</field-validator>
+    	</field>
+    	<!-- フリガナ -->
+    	<field name="nameKana">
+    		<field-validator type="requiredstring">
+    			<message key="入力してください"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[ア-ン]{1,50}$</param>
+    			<message key="カタカナで入力してください"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- パスワード -->
+    	<field name="password">
+    		<field-validator type="requiredstring">
+    			<message key="入力してください"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="半角英数字8~16文字で入力してください"/>
+    		</field-validator>
+    	</field>
+
+    	 <!-- パスワード(確認用) -->
+    	<field name="confirmPass">
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[confirmPass.equals(password)]]></param>
+    			<message key="確認用パスワードが一致しません"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="半角英数字8~16文字で入力してください"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- 新しいメールアドレス -->
+    	<field name="mailAddress">
+    	    		<field-validator type="stringlength">
+                	<param name="minLength">1</param>
+                	<param name="maxLength">256</param>
+                <message key="100文字以内で入力してください"/>
+    		</field-validator>
+    		<field-validator type="email">
+    			<message key="認められない形式です"/>
+    		</field-validator>
+
+    	</field>
+
+    	 <!-- 新しいメールアドレス（確認用） -->
+    	<field name="confirmMail">
+    		<field-validator type="email">
+    			<message key="認められない形式"/>
+    		</field-validator>
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[confirmMail != null && confirmMail.equals(mailAddress)]]></param>
+    			<message key="確認用メールアドレスと一致しません"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- 郵便番号 -->
+    	<field name="postalCode">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{7}$</param>
+    			<message key="半角数字７文字で入力してください"/>
+    		</field-validator>
+    		<field-validator type="requiredstring">
+    			<message key="入力してください"/>
+    		</field-validator>
+    	</field>
+
+    	<!-- 市区町村以下 -->
+    	<field name="address">
+    		<field-validator type="requiredstring">
+    			<message key="入力してください"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[ぁ-ゞァ-ヶ一-龠0-9０-９-－‐―ーa-zA-Zａ-ｚＡ-Ｚ]+$</param>
+    			<message key="認められない形式です"/>
+    		</field-validator>
+    		<field-validator type="stringlength">
+    			<param name="minLength">1</param>
+    			<param name="maxLength">117</param>
+    			<message key="117文字以内で入力してください"/>
+    		</field-validator>
+    	</field>
+   
+    	<!-- 電話番号 -->
+    	<field name="cellNumber">
+    		<field-validator type="requiredstring">
+    			<message key="入力してください"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{10,11}$</param>
+    			<message key="半角数字10~11文字で入力してください"/>
+    		</field-validator>
+    	</field>
+   
+    	<!-- クレジットカード番号 -->
+    	<field name="creditNumber">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{16}$</param>
+    			<message key="半角数字16文字で入力してください "/>
+    		</field-validator>
+    	</field>
+    	 	 	    
+    	<!-- クレジットカード名義 -->
+    	<field name="cardHolder">
+    		<field-validator type="regex">
+    			<param name="regex">^[A-Z]* [A-Z]*$</param>
+    			<message key="半角大文字英字で入力してください"/>
+    		</field-validator>
+    	</field>
+  
+    	<!-- セキュリティコード -->
+    	<field name="securityCode">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{3,4}$</param>
+    			<message key="半角数字3~4文字で入力してください"/>
+    		</field-validator>
+    	</field>
+
+      </validators>

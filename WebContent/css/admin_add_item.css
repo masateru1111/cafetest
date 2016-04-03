@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+
+.add_item{
+	margin : 10px auto;
+	width : 600px;
+}
+.add_item td{
+	padding: 5px 0px;
+	float : left;
+}
+.text1{
+	width : 600px;
+	height : 100px
+}
+.text2{
+	width : 600px
+}
+

@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+.items th, td {
+	border: 2px dotted #800000;
+	padding: 5px 10px;
+}
+
+
+.items {
+	width: 600px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+.items th {
+	text-align : center;
+}
+
+.history th, td {
+	width: 600px;
+	margin: 0 auto;
+	border: 2px dottex #800000;
+	padding: 5px 10px;
+}
+
+.total_item {
+	font-size: 20px;
+}
+

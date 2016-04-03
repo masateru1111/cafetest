@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#create_check{
+	margin : 50px auto;
+	width : 400px;
+
+}
+
+#create_check td{
+	padding : 10px 5px;
+	color:#800000;
+	border : 2px dotted #800000;
+}
+

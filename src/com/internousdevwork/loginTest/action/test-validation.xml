@@ -1,0 +1,130 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+      バリデーションテスト
+
+jsp側につける内容
+<s:fielderror><s:param value="%{'confirmPass'}" /></s:fielderror>
+
+ 
+ 
+struts.xmlへ追記する内容
+<result name="input" >payment_information_edit.jsp</result>
+
+      <validators>
+    	お名前
+    	<field name="userName">
+    		<field-validator type="regex">
+    			<param name="regex">^[ぁ-んァ-ヶ一-龠一-十]+$</param>
+    			<message key="create_useraction_validation.alphabet"/>
+    		</field-validator>
+    		<field-validator type="stringlength">
+                	<param name="minLength">1</param>
+                	<param name="maxLength">50</param>
+                <message key="create_useraction_validation.characters1"/>
+    		</field-validator>
+    	</field>
+
+    	パスワード
+    	<field name="password">
+    		<field-validator type="requiredstring">
+    			<message key="create_useraction_validation.input"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="create_useraction_validation.characters2"/>
+    		</field-validator>
+    	</field>
+
+    	 パスワード(確認用)
+    	<field name="reTypePassword">
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[reTypePassword.equals(password)]]></param>
+    			<message key="create_useraction_validation.password"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[a-zA-Z0-9]{8,16}$</param>
+    			<message key="create_useraction_validation.characters2"/>
+    		</field-validator>
+    	</field>
+
+    	新しいメールアドレス
+    	<field name="email">
+    	    		<field-validator type="stringlength">
+                	<param name="minLength">1</param>
+                	<param name="maxLength">256</param>
+                <message key="create_useraction_validation.characters6"/>
+    		</field-validator>
+    		<field-validator type="email">
+    			<message key="create_useraction_validation.format"/>
+    		</field-validator>
+
+    	</field>
+    	 新しいメールアドレス（確認用）
+    	<field name="reTypeEmail">
+    		<field-validator type="email">
+    			<message key="create_useraction_validation.format"/>
+    		</field-validator>
+    		<field-validator type="fieldexpression">
+    			<param name="expression"><![CDATA[reTypeEmail != null && reTypeEmail.equals(email)]]></param>
+    			<message key="create_useraction_validation.mail"/>
+    		</field-validator>
+    	</field>
+    	郵便番号
+    	<field name="postalCode">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{7}$</param>
+    			<message key="create_useraction_validation.seven"/>
+    		</field-validator>
+    		<field-validator type="requiredstring">
+    			<message key="create_useraction_validation.input"/>
+    		</field-validator>
+    	</field>
+    	市区町村以下
+    	<field name="address">
+    		<field-validator type="requiredstring">
+    			<message key="create_useraction_validation.input"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[ぁ-ゞァ-ヶ一-龠0-9０-９-－‐―ーa-zA-Zａ-ｚＡ-Ｚ]+$</param>
+    			<message key="create_useraction_validation.hyphen"/>
+    		</field-validator>
+    		<field-validator type="stringlength">
+    			<param name="minLength">1</param>
+    			<param name="maxLength">117</param>
+    			<message key="create_useraction_validation.city"/>
+    		</field-validator>
+    	</field>
+    	電話番号
+    	<field name="cellNumber">
+    		<field-validator type="requiredstring">
+    			<message key="create_useraction_validation.input"/>
+    		</field-validator>
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{10,11}$</param>
+    			<message key="create_useraction_validation.tel"/>
+    		</field-validator>
+    	</field>
+    	クレジットカード番号
+    	<field name="creditNumber">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{16}$</param>
+    			<message key="create_useraction_validation.characters3 "/>
+    		</field-validator>
+    	</field>
+    	クレジットカード名義
+    	<field name="cardName">
+    		<field-validator type="regex">
+    			<param name="regex">^[A-Z]* [A-Z]*$</param>
+    			<message key="create_useraction_validation.characters4"/>
+    		</field-validator>
+    	</field>
+    	セキュリティコード
+    	<field name="cardSecurity">
+    		<field-validator type="regex">
+    			<param name="regex">^[0-9]{3,4}$</param>
+    			<message key="create_useraction_validation.characters5"/>
+    		</field-validator>
+    	</field>
+
+      </validators>
+ -->
