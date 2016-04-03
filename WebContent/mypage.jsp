@@ -164,6 +164,7 @@
 			</table>
 		</div>
 		<!-- メインここまで -->
+		
 		<div id="footer">
 			<p>&copy;Copyright IWATA cafe. All rights reserved.</p>
 		</div>
